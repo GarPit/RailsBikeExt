@@ -1,0 +1,7 @@
+%ul#menu
+  = admin_menu_item('contents', admin_pages_url)
+  = admin_menu_item('engines', admin_engines_url) if can? :manage, :all
+  - if content_for? :ext_menu
+    = yield :ext_menu
+  = admin_menu_item('settings', edit_admin_current_site_url)
+  %li.clear

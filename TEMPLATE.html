@@ -1,0 +1,12 @@
+{% tree 'site', depth: 20, template: 'xxx' %}
+
+Node
+<span>{{page.title}}</span>
+<ul>
+  {% for node in tree.nodes %}
+  <li>
+    <a href="/{{node.fullpath}}">{{node.title}}</a>
+    {% unless node.children == empty %}{% render_node %}{% endunless%}
+  </li>
+  {% endfor %}
+</ul>

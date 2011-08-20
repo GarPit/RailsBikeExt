@@ -1,0 +1,64 @@
+ru:
+  errors:
+    messages:
+      not_found: "не найдено"
+      already_confirmed: "уже подтверждено"
+      not_locked: "не заблокировано"
+
+  devise:
+    failure:
+      already_authenticated: 'Вы уже авторизованы...'
+      admin:
+        unauthenticated: 'Вы должны войти в систему, чтобы продолжить.'
+        unconfirmed: 'Вы должны подтвердить свой аккаунт перед продолжением.'
+        locked: 'Ваш аккаунт заблакирован.'
+        invalid: 'Неправильный email или пароль.'
+        no_membership: 'Ваша учетная запись не является членом этого сайта, пожалуйста, свяжитесь с администрацией сайта, чтобы получить доступ.'
+        invalid_token: 'Недопустимая аутентификация.'
+        timeout: 'Ваша сессия устарела. Пожалуйста зайдите на сайт заново.'
+        inactive: 'Ваша учетная запись еще не активирована.'
+    sessions:
+      admin:
+        signed_in: 'Вход произведен успешно.'
+        signed_out: 'Выход произведен успешно.'
+    passwords:
+      admin:
+        send_instructions: 'Вы получите письмо с инструкциями о том, как сбросить пароль в течение нескольких минут.'
+        updated: 'Ваш пароль был успешно изменен.'
+    confirmations:
+      admin:
+        send_instructions: 'Вы получите письмо с инструкциями о том, как подтвердить вашу учетную запись в течение нескольких минут.'
+        confirmed: 'Ваша учетная запись подтверждена.'
+    registrations:
+      admin:
+        signed_up: 'Вы успешно вошли на сайт.'
+        updated: 'Вы успешно обновили свою учетную запись.'
+        destroyed: 'Пока. Вы успешно удалили свою учетную запись. Надеемся скоро вас увидеть.'
+    unlocks:
+      admin:
+        send_instructions: 'Вы получите письмо с инструкциями о том, как разблокировать вашу учетную запись в течение нескольких минут.'
+        unlocked: 'Ваша учетная запись разблокирована.'
+    mailer:
+      admin:
+        confirmation_instructions: 'Инструкции подтверждения'
+        reset_password_instructions: 'Инструкции сброса пароля'
+        unlock_instructions: 'Инструкции разблокировки учетной записи'
+        
+        
+  admin:
+    mailer:
+      common:
+        hello: Привет
+
+      confirmation_instructions:
+        you_can_confirm_your_account_through_the_link_below: "Вы можете подтвердить свой аккаунт, нажав на ссылку ниже:"
+        confirm_my_account: "Подтвердить мой аккаунт"
+      reset_password_instructions:
+        reset_password_instruction: "Кто-то просил ссылку, чтобы изменить свой​пароль, и вы можете сделать это по ссылке ниже:"
+        change_my_password: "Изменить мой пароль"
+        wrong_request_instruction: "Если Вы этого не делали, то можте проигнорировать это сообщение."
+        unchange_password_message: "Your password won't change until you access the link above and create a new one."
+      unlock_instructions:
+        locked_account_message: "Ваш аккаунт был заблокирован из-за чрезмерного количества неудачных попыток регистрации на сайте."
+        unlock_account_instruction: "Нажмите на ссылку ниже, чтобы разблокировать Ваш аккаунт:"
+        unlock_my_account: "Разблокировать мой аккаунт"

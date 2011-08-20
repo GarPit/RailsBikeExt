@@ -1,0 +1,24 @@
+= admin_content_menu_item 'back', admin_engines_url
+= admin_content_menu_item 'tree_templates', admin_tree_templates_url do
+	- if can? :manage, TreeTemplate
+		.header
+			%p= link_to t('admin.sitemap.template.new'), new_admin_tree_template_url
+	.inner
+		%h2!= t('admin.sitemap.template.latests')
+		%ul
+			- TreeTemplate.order_by(:updated_at, :desc).each do |tree_template|
+				%li
+					= link_to tree_template.name, edit_admin_tree_template_url(tree_template)
+					%span= time_ago_in_words(tree_template.updated_at)
+
+= admin_content_menu_item 'tree_nodes', admin_tree_nodes_url do
+	- if can? :manage, TreeNode
+		.header
+			%p= link_to t('admin.sitemap.treenode.new'), new_admin_tree_node_url
+	.inner
+		%h2!= t('admin.sitemap.treenode.latests')
+		%ul
+			- TreeNode.order_by(:updated_at, :desc).each do |tree_node|
+				%li
+					= link_to tree_node.name, edit_admin_tree_node_url(tree_node)
+					%span= time_ago_in_words(tree_node.updated_at)

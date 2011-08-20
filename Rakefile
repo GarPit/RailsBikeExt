@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "railsbike_ext"
   gem.homepage = "http://github.com/saratovsource/railsbike_ext"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "Extension for railsbike"
+  gem.description = "Extension for railsbike"
   gem.email = "saratovsource@gmail.com"
   gem.authors = ["Alexander Kirillov"]
   # dependencies defined in Gemfile

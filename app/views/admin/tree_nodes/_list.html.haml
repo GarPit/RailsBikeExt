@@ -1,0 +1,5 @@
+- if collection.empty?
+	%p.no-items!= t('.no_items', :url => new_admin_tree_node_url)
+- else
+	%ul.list
+		= render :partial => 'tree_node', :collection=>TreeNode.all

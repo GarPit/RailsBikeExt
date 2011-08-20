@@ -1,0 +1,12 @@
+%li{ :class => (tree_node.new_record? ? 'new-tree-node' : 'tree-node') }
+	%em
+	%strong
+		= link_to edit_resource_url(tree_node) do
+			%span= tree_node.name
+			%code= "[#{tree_node.depths.join(', ')}]"
+	.more
+		%span!= t('.updated_at')
+		&mdash;
+		%span.date= l tree_node.updated_at, :format => :short
+		= link_to image_tag('admin/form/icons/clone.gif'), clone_admin_tree_node_path(tree_node), :class=>"clone", :confirm => t('admin.messages.confirm')
+		= link_to image_tag('admin/list/icons/trash.png'), resource_url(tree_node), :class => 'remove', :confirm => t('admin.messages.confirm'), :method => :delete

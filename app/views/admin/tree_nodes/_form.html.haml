@@ -1,0 +1,16 @@
+- content_for :head do
+	= include_javascripts :image_picker, :edit_page
+	= include_stylesheets :editable_elements, :fancybox
+	
+- if can?(:manage, resource)
+	= f.foldable_inputs :name => t('.information'), :class=>"off" do
+		= f.input :name
+		= f.input :depths_collection
+	= f.foldable_inputs :name => t('.node_template'), :class=>"off" do
+		= f.custom_input :template, :css => 'code full', :with_label => false do
+			= f.label :template
+			%code{ :class => 'html' }
+				= f.text_area :template
+			= f.errors_on :template
+			.more
+				= link_to t('admin.image_picker.link'), admin_theme_assets_path, :id => 'image-picker-link', :class => 'picture'

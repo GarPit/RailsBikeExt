@@ -1,0 +1,35 @@
+- content_for :head do
+	= include_javascripts :image_picker, :edit_custom_fields
+	= include_stylesheets :editable_elements, :fancybox
+	
+- if can?(:manage, resource)
+	= f.foldable_inputs :name => t('.information'), :class=>"tree_templates off" do
+		= f.input :name
+		= f.input :description
+		- unless resource.new_record?
+			= f.custom_input :tree_nodes, :label=>"Tree Nodes", :css => 'has-many' do
+				.has-many-selector
+				
+					%p{ :style => f.object.send(:tree_nodes).empty? ? '' : 'display: none'  }
+						= t('.empty')
+				
+					%ul
+				
+					%script{ :type => 'text/x-mustache-template', :name => 'template', :'data-base-input-name' => "tree_template[tree_nodes]" }
+						%li{ :class => "item {{behaviour_flag}}" }
+							%span.handle= image_tag 'admin/form/icons/drag.png'
+							{{^if_template}}
+							%input{ :name => '{{base_name}}[]', :value => '{{{id}}}', :type => 'hidden', :'data-field' => 'id' }
+							{{/if_template}}
+						
+							%strong {{label}}
+							{{#if_template}}
+							= select_tag 'label', ''
+							{{/if_template}}
+						
+							%span.actions
+								= link_to image_tag('admin/form/icons/trash.png'), '#', :class => 'remove'
+								%button{ :class => 'button light mini add', :type => 'button' }
+									%span!= t('admin.buttons.new_item')
+					%script{ :type => 'text/javascript', :name => 'data' }
+						!= collection_to_js(TreeNode.all.collect{ |c| ["#{c.name} - [#{c.depths.join(', ')}]", c.id.to_s] }, :taken_ids => f.object.send(:tree_nodes).collect{|n| n.id.to_s})

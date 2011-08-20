@@ -1,0 +1,11 @@
+- content_for :submenu do
+	=# render 'admin/shared/menu/engines'
+%p!= t('.help')
+%p!= t('.description')
+
+%ul.list#contents-list
+	- RailsbikeExt::Integrator.instance.engines.each_pair do |name, hash|
+		%li
+			%em
+			%strong= link_to t("admin.engines.#{name.downcase}.name"), hash[:route]
+			.more= t("admin.engines.#{name.downcase}.description")

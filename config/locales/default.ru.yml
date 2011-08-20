@@ -1,0 +1,233 @@
+ru:
+  errors:
+    # The default format use in full error messages.
+    format: "%{attribute} %{message}"
+
+    # The values :model, :attribute and :value are always available for interpolation
+    # The value :count is available when applicable. Can be used for pluralization.
+    messages:
+      inclusion: "не включены в список"
+      exclusion: "исключены"
+      invalid: "неверный"
+      confirmation: "не соотвествует подтверждению"
+      accepted: "принято"
+      empty: "пусто"
+      blank: "пусто"
+      too_long: "слишком много (не более %{count} символов)"
+      too_short: "слишком мало (не менее %{count} символов)"
+      wrong_length: "недопустимая длина (должно быть %{count} символов)"
+      taken: "отсутсвует"
+      not_a_number: "не является числом"
+      greater_than: "больше чем %{count}"
+      greater_than_or_equal_to: "больше или равно %{count}"
+      equal_to: "равно %{count}"
+      less_than: "меньше, чем %{count}"
+      less_than_or_equal_to: "меньше или равно %{count}"
+      odd: "нечетный"
+      even: "четный"
+
+      domain_taken: "%{value} уже используется"
+      invalid_domain: "%{value} недопустимо"
+      needs_admin_account: "Требуется хотя бы одна учетная запись администратора"
+      protected_page: "Вы не можете удалить домашнюю или 404 страницу"
+      extname_changed: "Новый файл не имеет оригинального расширения"
+      array_too_short: "слишком мало (минимальное количество элементов %{count})"
+      liquid_syntax: "Ошибка синтаксиса Liquid ('%{error}')"
+      invalid_theme_file: "не может быть пустое, либо не ZIP архив"
+      page:
+        liquid_syntax: "Ошибка синтаксиса Liquid ('%{error}'/'%{fullpath}')"
+        liquid_extend: "Страница '%{fullpath}' использует не существующий шаблон"
+
+
+  attributes:
+    defaults:
+      pages:
+        index:
+          title: "Домашняя страница"
+          body: "Содержимое домашней страницы"
+        "404":
+          title: "Страница не найдена"
+          body: "Содержимое 404-й страницы"
+        other:
+          body: "{% extends 'parent' %}"
+
+  mongoid:
+    attributes:
+      page:
+        title: Заголовок
+        parent: Родитель
+        slug: часть URL
+        templatized: Шаблонизированная
+        published: Опубликованная
+        listed: В меню
+        redirect: Переадресованная
+        redirect_url: URL переадресации
+        cache_strategy: Кэш
+      content_type:
+        name: Наименование
+        description: Описание
+        slug: Значение в транслите
+        order_by: Отсортировано по
+        order_direction: Порядок сортировки
+        highlighted_field_name: Выделенное имя поля
+        group_by_field_name: Сгрупировано по имени поля
+        api_enabled: API включен
+      asset:
+        source: Источник
+      account:
+        email: Эл.почта
+        name: Имя
+        language: Язык
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+      snippet:
+        body: Код
+        slug: Значение в транслите
+        name: Название
+      theme_asset:
+        content_type: Тип контента
+      site:
+        name: Название сайта
+        domain_name: Домен
+        subdomain: Поддомен
+        restricted_access: Активный ?
+        access_login: Имя пользователя
+        access_password: "Пароль"
+
+  pagination:
+    previous: "&laquo; назад"
+    next: "вперед &raquo;"
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%e %b"
+      long: "%e %B %Y"
+      long_ordinal: "%e %B %Y"
+      only_day: "%e"
+
+    day_names: [Воскресенье, Понедельник, Вторник, Среда, Четверг, Пятница, Суббота]
+    abbr_day_names: [Вс, Пн, Вт, Ср, Чт, Пт, Сб]
+    month_names: [~, Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь]
+    abbr_month_names: [~, Янв., Фев., Мар., Апр., Май, Июнь, Июль, Авг., Сен., Окт., Ноя., Дек.]
+    order: [ :day, :month, :year ]
+
+  pagination:
+    previous: "&laquo; назад"
+    next: "вперед &raquo;"
+
+  time:
+    formats:
+      default: "%d %B %Y %H:%M"
+      time: "%H:%M"
+      short: "%d %b %H:%M"
+      long: "%A %d %B %Y %H:%M:%S %Z"
+      long_ordinal: "%A %d %B %Y %H:%M:%S %Z"
+      only_second: "%S"
+    am: 'AM'
+    pm: 'PM'
+
+  datetime:
+    distance_in_words:
+      half_a_minute: 'полминуты'
+      less_than_x_seconds:
+        one: 'Менее одной секунды'
+        other: 'меньше, чем %{count} секунд(-ы)'
+      x_seconds:
+        one: 'одна секунда'
+        other: '%{count} секунд(-ы)'
+      less_than_x_minutes:
+        one: 'Менее одной минуты'
+        other: 'меньше, чем %{count} минут(-ы)'
+      x_minutes:
+        one: 'одна минута'
+        other: '%{count} минут(-ы)'
+      about_x_hours:
+        one: 'Около часа'
+        other: 'около %{count} часов'
+      x_days:
+        one: 'Один день'
+        other: '%{count} дней'
+      about_x_months:
+        one: 'около месяца'
+        other: 'около %{count} месяцев'
+      x_months:
+        one: 'один месяц'
+        other: '%{count} месяцев'
+      almost_x_years:
+        one: 'Почти год'
+        other: 'почти %{count} года'
+      about_x_years:
+        one: 'около года'
+        other: 'около %{count} лет'
+      over_x_years:
+        one: 'более года'
+        other: 'более %{count} лет'
+    prompts:
+      second: "секунда"
+      minute: "минута"
+      hour: "час"
+      day: "день"
+      month: "месяц"
+      year: "год"
+
+  number:
+    format:
+      precision: 2
+      separator: ','
+      delimiter: '.'
+      significant: false
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        unit: 'руб.'
+        format: '%n%u'
+        separator: ","
+        delimiter: ""
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+    percentage:
+      format:
+        delimiter: ""
+    precision:
+      format:
+        delimiter: ""
+    human:
+      format:
+        delimiter: ""
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        # Storage units output formatting.
+        # %u is the storage unit, %n is the number (default: 2 MB)
+        format: "%n %u"
+        units:
+          byte:
+            one: "байт"
+            other: "байт"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""
+          thousand: тысяча
+          million: миллион
+          billion:
+            one: миллиард
+            others: миллиардов
+          trillion: триллион
+          quadrillion:
+            one: квадрильон
+            others: квадрильонов
+
+  support:
+    array:
+      sentence_connector: 'и'
+      skip_last_comma: true
+      words_connector: ", "
+      two_words_connector: " и "
+      last_word_connector: " и "

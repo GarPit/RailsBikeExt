@@ -1,0 +1,10 @@
+%li{ :class => (tree_template.new_record? ? 'new-tree-template' : 'tree-template') }
+	%em
+	%strong= link_to tree_template.name, edit_resource_url(tree_template)
+	.more
+		%span.email= t('.uses_count', :count=>tree_template.tree_nodes.length)
+		%span!= t('.updated_at')
+		&mdash;
+		%span.date= l tree_template.updated_at, :format => :short
+		= link_to image_tag('admin/form/icons/clone.gif'), clone_admin_tree_template_path(tree_template), :class=>"clone", :confirm => t('admin.messages.confirm')
+		= link_to image_tag('admin/list/icons/trash.png'), resource_url(tree_template), :class => 'remove', :confirm => t('admin.messages.confirm'), :method => :delete
