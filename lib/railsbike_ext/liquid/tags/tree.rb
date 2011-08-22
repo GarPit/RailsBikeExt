@@ -72,8 +72,8 @@ module RailsbikeExt
           end
         end
 
-        ::Liquid::Template.register_tag('tree', Tree)
       end
+      ::Liquid::Template.register_tag('tree', Tree)
     end
   end
 end

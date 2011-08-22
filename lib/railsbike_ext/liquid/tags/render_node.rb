@@ -37,8 +37,8 @@ module RailsbikeExt
           end
         end
         
-        ::Liquid::Template.register_tag('render_node', RenderNode)
       end
+      ::Liquid::Template.register_tag('render_node', RenderNode) 
     end
   end
 end
