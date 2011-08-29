@@ -7,7 +7,7 @@ module RailsbikeExt
         def initialize(tag_name, markup, tokens, context)
           if markup =~ Syntax
             @source = ($1 || 'page').gsub(/"|'/, '')
-            @options = { :id => 'tree', :depth => 1 }
+            @options = { :id => 'tree', :depth => 0 }
             @template = nil
             markup.scan(::Liquid::TagAttributes) { |key, value| @options[key.to_sym] = value.gsub(/"|'/, '') }
             
@@ -21,15 +21,17 @@ module RailsbikeExt
 
         def render(context)
           nodes = fetch_entries(context)
-          render_nodes(nodes, context)
+          render_nodes(nodes, context, 1)
         end
 
         private
         
-        def render_nodes(nodes, context)
+        def render_nodes(nodes, context, depth)
           output = ""
           unless nodes.empty?
-            pagedepth = nodes.first.depth
+            #pagedepth = nodes.first.depth
+            #pagedepth = @current_page.depth
+            pagedepth = depth
             template = TreeTemplate.where(:name=>@options[:template]).first
             context['tree-template'] = template.templates_in_deptsh
             if template
@@ -39,6 +41,7 @@ module RailsbikeExt
                   'nodes' => nodes,
                   'depth' => pagedepth
                 }
+                context.scopes.last['pdepth'] = pagedepth
                 output = ::Liquid::Template.parse(context['tree-template'][pagedepth].template).render(context) if context['tree-template'].has_key?(pagedepth)
               end
             end

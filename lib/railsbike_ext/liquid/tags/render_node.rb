@@ -13,7 +13,8 @@ module RailsbikeExt
         def render(context)
           node = context['node']
           return '' if node.nil?
-          return '' if node.children.empty?
+          return '' if node.children_menu.empty?
+          #pagedepth = node.children.first.depth
           pagedepth = node.children.first.depth
           output = ""
           context.stack do
@@ -21,6 +22,7 @@ module RailsbikeExt
               'nodes' => node.children_menu,
               'depth' => pagedepth
             }
+            context.scopes.last['pdepth'] = context.scopes.last['pdepth'].to_i + 1
             output = ::Liquid::Template.parse(context['tree-template'][pagedepth].template).render(context) if context['tree-template'].has_key?(pagedepth)
           end
           output
