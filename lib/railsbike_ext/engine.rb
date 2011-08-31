@@ -20,6 +20,7 @@ module RailsbikeExt
       end
       Locomotive::Liquid::Drops::Page.send(:include, ::RailsbikeExt::Drops::PageExt)
       Locomotive::Liquid::Drops::ProxyCollection.send(:include, ::RailsbikeExt::Drops::ProxyCollectionExt)
+      #Locomotive::Export.send(:include, ::RailsbikeExt::ExportEx)
     end
     
     config.autoload_once_paths += %W( #{config.root}/app/controllers #{config.root}/app/models #{config.root}/app/helpers #{config.root}/app/uploaders)
