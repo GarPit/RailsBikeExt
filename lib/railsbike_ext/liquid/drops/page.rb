@@ -10,6 +10,10 @@ module RailsbikeExt
             self._source.children.reject{|p| !include_page?(p)}
           end
           
+          def all_slugs
+            @all_slugs ||= liquify(*self._source.self_and_ancestors.map{|i| i.slug})
+          end
+          
           private
           
           def include_page?(page)

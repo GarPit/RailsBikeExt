@@ -6,6 +6,9 @@ namespace :railsbike do
   
   desc 'export'
   task :export => :environment do
-    zipfile = ::Locomotive::Export.run!(current_site, current_site.name.parameterize)
+    Site.all.each do |current_site|
+      zipfile = ::Locomotive::Export.run!(current_site, current_site.name.parameterize)
+      p zipfile
+    end
   end
 end 

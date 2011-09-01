@@ -11,6 +11,12 @@ module Extensions
       end
     end
     
+    module ClassMethods
+      def filters
+        _parent
+      end
+    end
+    
     included do
       include Mongoid::FullTextSearch
       

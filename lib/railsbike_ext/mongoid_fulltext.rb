@@ -156,7 +156,11 @@ module Mongoid::FullTextSearch
     
     def instantiate_mapreduce_result(result)
       #result[:clazz].constantize.find(:first, :conditions => {'_id' => result[:id]})
-      result[:clazz].constantize._parent.contents.where(:_id=>result[:id]).first
+      begin
+        result[:clazz].constantize._parent.contents.where(:_id=>result[:id]).first
+      rescue Exception => e
+        nil
+      end
     end
     
     def instantiate_mapreduce_results(results, options)

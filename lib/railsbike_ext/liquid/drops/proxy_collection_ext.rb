@@ -1,5 +1,3 @@
-
-
 module RailsbikeExt
     module Drops
       module ProxyCollectionExt
@@ -9,6 +7,13 @@ module RailsbikeExt
 
           def collect!(&block)
             self.collection.collect!(&block)
+          end
+          
+          def fulltext_search(query)
+            klass = @content_type.contents.klass
+            ret = klass.fulltext_search(query)
+            p "[debug]: #{ret.length}"
+            ret.uniq.flatten
           end
           
           def group_by_field!(fieldname)

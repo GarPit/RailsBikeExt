@@ -20,6 +20,7 @@ module RailsbikeExt
       end
       Locomotive::Liquid::Drops::Page.send(:include, ::RailsbikeExt::Drops::PageExt)
       Locomotive::Liquid::Drops::ProxyCollection.send(:include, ::RailsbikeExt::Drops::ProxyCollectionExt)
+      Locomotive::Liquid::Drops::Site.send(:include, ::RailsbikeExt::Drops::SiteExt)
       #Locomotive::Export.send(:include, ::RailsbikeExt::ExportEx)
     end
     
@@ -29,6 +30,7 @@ module RailsbikeExt
     
     config.after_initialize do
       ContentInstance.send :include, Extensions::Sphinx
+      Page.send :include, Extensions::Pagenav
     end
   end
 end
