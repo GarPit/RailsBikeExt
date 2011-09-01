@@ -15,9 +15,9 @@ module RailsbikeExt
     extension_name "RailsbikeCore", "#"
     
     def self.activate
-      Locomotive.configure do |config|
-        config.locales = %w{en ru}
-      end
+      #Locomotive.configure do |config|
+      #  config.locales = %w{en ru}
+      #end
       Locomotive::Liquid::Drops::Page.send(:include, ::RailsbikeExt::Drops::PageExt)
       Locomotive::Liquid::Drops::ProxyCollection.send(:include, ::RailsbikeExt::Drops::ProxyCollectionExt)
       Locomotive::Liquid::Drops::Site.send(:include, ::RailsbikeExt::Drops::SiteExt)

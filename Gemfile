@@ -5,7 +5,7 @@ source "http://rubygems.org"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
-gem 'rails', '3.0.9'
+gem 'rails', '3.0.10'
 gem 'mongoid', '~> 2.0.2'
 gem 'bson_ext', '~> 1.3.0'
 gem 'haml', '3.1.2'

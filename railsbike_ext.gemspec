@@ -37,7 +37,7 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, ["= 3.0.9"])
+      s.add_runtime_dependency(%q<rails>, ["= 3.0.10"])
       s.add_runtime_dependency(%q<mongoid>, ["~> 2.0.2"])
       s.add_runtime_dependency(%q<bson_ext>, ["~> 1.3.0"])
       s.add_runtime_dependency(%q<haml>, ["= 3.1.2"])
@@ -50,7 +50,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<cucumber-rails>, ["= 1.0.2"])
       s.add_development_dependency(%q<pickler>, [">= 0"])
     else
-      s.add_dependency(%q<rails>, ["= 3.0.9"])
+      s.add_dependency(%q<rails>, ["= 3.0.10"])
       s.add_dependency(%q<mongoid>, ["~> 2.0.2"])
       s.add_dependency(%q<bson_ext>, ["~> 1.3.0"])
       s.add_dependency(%q<haml>, ["= 3.1.2"])
@@ -64,7 +64,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<pickler>, [">= 0"])
     end
   else
-    s.add_dependency(%q<rails>, ["= 3.0.9"])
+    s.add_dependency(%q<rails>, ["= 3.0.10"])
     s.add_dependency(%q<mongoid>, ["~> 2.0.2"])
     s.add_dependency(%q<bson_ext>, ["~> 1.3.0"])
     s.add_dependency(%q<haml>, ["= 3.1.2"])
