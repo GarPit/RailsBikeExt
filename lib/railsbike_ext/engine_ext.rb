@@ -1,4 +1,5 @@
 require 'railsbike_ext/integrator'
+require 'railsbike_ext/sphinx_integrator'
 module RailsbikeExt
   module EngineExt
     extend ActiveSupport::Concern

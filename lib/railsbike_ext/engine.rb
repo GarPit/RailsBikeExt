@@ -29,7 +29,8 @@ module RailsbikeExt
     config.to_prepare &method(:activate).to_proc
     
     config.after_initialize do
-      ContentInstance.send :include, Extensions::Sphinx
+      #ContentInstance.send :include, Extensions::Sphinx
+      ::RailsbikeExt::SphinxIntegrator.instance.update_dynamic_search_indexes
       Page.send :include, Extensions::Pagenav
     end
   end

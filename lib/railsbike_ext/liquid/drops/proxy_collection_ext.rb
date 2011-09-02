@@ -9,11 +9,10 @@ module RailsbikeExt
             self.collection.collect!(&block)
           end
           
-          def fulltext_search(query)
+          def sphinx_search(query, critery)
             klass = @content_type.contents.klass
-            ret = klass.fulltext_search(query)
-            p "[debug]: #{ret.length}"
-            ret.uniq.flatten
+            ret = klass.sphinx_search(query, critery)
+            ret.flatten.uniq
           end
           
           def group_by_field!(fieldname)

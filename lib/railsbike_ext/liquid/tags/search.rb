@@ -34,7 +34,9 @@ module RailsbikeExt
         end
         
         def show_result(context)
-          context.scopes.last['search']['collection'] = fetch_search_results(@query, context['contents'])
+          @critery = context['params']['critery']
+          ress = fetch_search_results(@query, @critery, context['contents'])
+          context.scopes.last['search']['collection'] = ress.flatten
           render_snippet(@attributes['result'], context)
         end
         
@@ -47,16 +49,30 @@ module RailsbikeExt
         
         protected
         
-        def fetch_search_results(query, targets)
-          search_candidate = @collection_array.first
-          begin
-            targets["#{search_candidate}"].fulltext_search(query).select{|item| 
-              @collection_array.include?(item._parent.slug)
-              }.compact.map{|r| r.to_liquid }
-          rescue Exception => e
-            p "[error]: #{e.message}"
-            []
+        def fetch_search_results(query, critery, targets)
+          ret = []
+          critery = parse_search_critery(critery)
+          @collection_array.each do |search_candidate|
+            begin
+              itms = targets["#{search_candidate}"].sphinx_search(query, critery).select{|item| 
+                @collection_array.include?(item._parent.slug)
+                }.compact.map{|r| r.to_liquid }
+              ret.push(itms)
+            rescue Exception => e
+              p "[error]: #{e.message}"
+            end
           end
+          
+          ret.uniq
+        end
+        
+        def parse_search_critery(critery_string)
+          crit_template = /fields\s*\[*(.*)\]/
+          result = {}
+          if (critery_string =~ crit_template)
+            result[:fields] = variables_from_string($1)
+          end
+          result
         end
         
         def render_snippet(slug, context)

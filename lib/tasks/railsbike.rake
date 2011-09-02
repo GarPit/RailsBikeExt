@@ -11,4 +11,10 @@ namespace :railsbike do
       p zipfile
     end
   end
+  
+  desc 'reindex all models'
+  task :reindex => :environment do
+    ret = RailsbikeExt::SphinxIntegrator::instance.reindex_all
+    p "Reindex compleate... with #{ret}. Bye..."
+  end
 end 

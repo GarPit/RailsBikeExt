@@ -96,6 +96,11 @@ module Mongoid::FullTextSearch
       # Options hash should only contain filters after this point
 
       ngrams = all_ngrams(query_string, self.mongoid_fulltext_config[index_name])
+      
+      if options[:only_words]
+        ngrams.reject!{|key, value| key.length == self.mongoid_fulltext_config[:ngram_width]}
+      end
+      
       return [] if ngrams.empty?
 
       # For each ngram, construct the query we'll use to pull index documents and 
