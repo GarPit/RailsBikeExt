@@ -48,9 +48,15 @@ ru:
         engines: "Расширения"
         sitemap: "Меню и карта сайта"
         railsbikecore: "Менеджер расширений"
-        
+
   railsbike:
     admin:
       shared:
         menu:
           engines: "Модули"
+  attributes:
+    defaults:
+      pages:
+        other:
+          body: "{% extends 'parent' %}"
+
