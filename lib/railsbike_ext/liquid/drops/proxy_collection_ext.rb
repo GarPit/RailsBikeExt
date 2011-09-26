@@ -15,6 +15,10 @@ module RailsbikeExt
             ret.flatten.uniq
           end
           
+          def select(&block)
+            self.collection.select(&block)
+          end
+          
           def group_by_field!(fieldname)
             oldcol = self.collection.group_by{|item| item.send(fieldname)}
             res_array = []

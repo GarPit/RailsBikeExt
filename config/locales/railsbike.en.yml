@@ -1,0 +1,62 @@
+en:
+  admin:
+    engines:
+      railsbikecore:
+        name: "Engines manager"
+        description: "The base module, which is responsible for what modules are available for a particular website"
+      sitemap:
+        name: "Menu | sitemap"
+        description: "Create a variation of the menus and site maps can be in this expansion."
+      index:
+        title: "Engines list"
+        help: "In this list you can see the extensions installed on your system. Also, find out which of them available on this site."
+        description: "Below are descriptions of the extensions registered on the site."
+    sitemap:
+      template:
+        new: "New template"
+        latests: "last updated"
+      treenode:
+        new: "New tree-node template"
+        latests: "last updated"
+
+    tree_templates:
+      index:
+        title: "Template list for tree templates"
+      list:
+        no_items: "While there is no item. Just click <a href=\"%{url}\">here</a> for create new."
+      form:
+        information: "Base options"
+      tree_template:
+        updated_at: "Updated"
+        uses_count: "Use: %{count} template(-s)."
+    tree_nodes:
+      index:
+        title: "List of tree nodes"
+      list:
+        no_items: "While there is no item. Just click <a href=\"%{url}\">here</a> for create new."
+      form:
+        information: "Base options"
+        node_template: "Node template"
+      tree_node:
+        updated_at: "Uodated"
+        include_in: "Include in %{count} templates"
+    shared:
+      menu:
+        back: "<- back"
+        tree_nodes: "Nodes templates"
+        tree_templates: "Tree template"
+        engines: "Extensions"
+        sitemap: "Menu | sitemap"
+        railsbikecore: "Engines manager"
+
+  railsbike:
+    admin:
+      shared:
+        menu:
+          engines: "Engines"
+  attributes:
+    defaults:
+      pages:
+        other:
+          body: "{% extends 'parent' %}"
+
