@@ -60,7 +60,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_dependency(%q<rcov>, [">= 0"])
       s.add_dependency(%q<linecache>, ["= 0.43"])
-      s.add_dependency(%q<cucumber-rails>, ["= 1.0.2"])
       s.add_dependency(%q<pickler>, [">= 0"])
     end
   else
@@ -74,7 +73,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
     s.add_dependency(%q<rcov>, [">= 0"])
     s.add_dependency(%q<linecache>, ["= 0.43"])
-    s.add_dependency(%q<cucumber-rails>, ["= 1.0.2"])
     s.add_dependency(%q<pickler>, [">= 0"])
   end
 end

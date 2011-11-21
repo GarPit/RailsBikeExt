@@ -18,7 +18,7 @@ group :development do
   gem "rcov", ">= 0"
 end
 
-group :test, :development do
+group :test do
   gem 'linecache', '0.43', :platforms => :mri_18
   #gem 'ruby-debug', :platforms => :mri_18
   #gem 'ruby-debug19', :platforms => :mri_19
