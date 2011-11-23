@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     resources :tree_templates do
       get :clone, :on => :member
     end
+    
+    
   end
 end
