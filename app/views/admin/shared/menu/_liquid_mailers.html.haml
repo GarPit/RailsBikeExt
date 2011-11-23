@@ -1,0 +1,12 @@
+= admin_content_menu_item 'back', admin_engines_url
+= admin_content_menu_item 'liquid_mailers', admin_liquid_mailers_url do
+	- if can? :manage, LiquidMailer
+		.header
+			%p= link_to t('admin.liquid_mailer.template.new'), new_admin_liquid_mailer_url
+	.inner
+		%h2!= t('admin.liquid_mailer.template.latests')
+		%ul
+			- LiquidMailer.order_by(:updated_at, :desc).each do |liquid_mailer|
+				%li
+					= link_to liquid_mailer.subject, edit_admin_liquid_mailer_url(liquid_mailer)
+					%span= time_ago_in_words(liquid_mailer.updated_at)

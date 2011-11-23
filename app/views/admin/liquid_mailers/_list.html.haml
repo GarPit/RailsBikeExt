@@ -1,0 +1,5 @@
+- if collection.empty?
+	%p.no-items!= t('.no_items', :url => new_admin_liquid_mailer_url)
+- else
+	%ul.list
+		= render :partial => 'liquid_mailer', :collection=>LiquidMailer.all

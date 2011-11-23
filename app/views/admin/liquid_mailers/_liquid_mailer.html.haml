@@ -1,0 +1,9 @@
+%li{ :class => (liquid_mailer.new_record? ? 'new-liquid_mailer' : 'liquid_mailer') }
+	%em
+	%strong= link_to liquid_mailer.subject, edit_resource_url(liquid_mailer)
+	.more
+		%span.email= t('.uses_count', :count=>liquid_mailer.content_types.length)
+		%span!= t('.updated_at')
+		&mdash;
+		%span.date= l liquid_mailer.updated_at, :format => :short
+		= link_to image_tag('admin/list/icons/trash.png'), resource_url(liquid_mailer), :class => 'remove', :confirm => t('admin.messages.confirm'), :method => :delete

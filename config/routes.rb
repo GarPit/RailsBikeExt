@@ -10,6 +10,6 @@ Rails.application.routes.draw do
       get :clone, :on => :member
     end
     
-    
+    resources :liquid_mailers
   end
 end
