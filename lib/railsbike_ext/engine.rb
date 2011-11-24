@@ -3,16 +3,18 @@ puts ".. loading RailsbikeExt engine"
 require 'rails'
 require 'mongoid'
 require 'haml'
+require 'railsbike_ext/railsbike_engine'
 require 'railsbike_ext/engine_ext'
 
 
 $:.unshift File.dirname(__FILE__)
-Rails::Engine.send :include, RailsbikeExt::EngineExt
+RailsbikeExt::RailsbikeEngine.send :include, RailsbikeExt::EngineExt
 
 module RailsbikeExt
   class RailsbikeExt < Rails::Engine
+    #include EngineExt
     
-    extension_name "RailsbikeCore", "#"
+    #extension_name "RailsbikeCore", "#"
     
     def self.activate
       #Locomotive.configure do |config|
