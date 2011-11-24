@@ -4,34 +4,173 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{railsbike_ext}
+  s.name = "railsbike_ext"
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = [%q{Alexander Kirillov}]
-  s.date = %q{2011-08-20}
-  s.description = %q{Extension for railsbike}
-  s.email = %q{saratovsource@gmail.com}
+  s.authors = ["Alexander Kirillov"]
+  s.date = "2011-11-24"
+  s.description = "Extension for railsbike"
+  s.email = "saratovsource@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
   ]
   s.files = [
     ".document",
+    ".rvmrc",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "TEMPLATE.html",
     "VERSION",
+    "app/cells/admin/main_menu_cell.rb",
+    "app/controllers/admin/api_contents_controller.rb",
+    "app/controllers/admin/engines_controller.rb",
+    "app/controllers/admin/liquid_mailers_controller.rb",
+    "app/controllers/admin/tree_nodes_controller.rb",
+    "app/controllers/admin/tree_templates_controller.rb",
+    "app/mailers/admin/notifications.rb",
+    "app/models/ability.rb",
+    "app/models/extensions/pagenav.rb",
+    "app/models/extensions/sphinx.rb",
+    "app/models/liquid_mailer.rb",
+    "app/models/tree_node.rb",
+    "app/models/tree_template.rb",
+    "app/views/.DS_Store",
+    "app/views/admin/.DS_Store",
+    "app/views/admin/content_types/_form.html.haml",
+    "app/views/admin/engines/index.html.haml",
+    "app/views/admin/liquid_mailers/_form.html.haml",
+    "app/views/admin/liquid_mailers/_liquid_mailer.html.haml",
+    "app/views/admin/liquid_mailers/_list.html.haml",
+    "app/views/admin/liquid_mailers/edit.html.haml",
+    "app/views/admin/liquid_mailers/index.html.haml",
+    "app/views/admin/liquid_mailers/new.html.haml",
+    "app/views/admin/notifications/_base.html.haml",
+    "app/views/admin/notifications/_liquid_mailer.html.haml",
+    "app/views/admin/notifications/new_content_instance.html.haml",
+    "app/views/admin/shared/_menu.html.haml",
+    "app/views/admin/shared/menu/_liquid_mailers.html.haml",
+    "app/views/admin/shared/menu/_tree_templates.html.haml",
+    "app/views/admin/tree_nodes/_form.html.haml",
+    "app/views/admin/tree_nodes/_list.html.haml",
+    "app/views/admin/tree_nodes/_tree_node.html.haml",
+    "app/views/admin/tree_nodes/edit.html.haml",
+    "app/views/admin/tree_nodes/index.html.haml",
+    "app/views/admin/tree_nodes/new.html.haml",
+    "app/views/admin/tree_templates/_form.html.haml",
+    "app/views/admin/tree_templates/_list.html.haml",
+    "app/views/admin/tree_templates/_tree_template.html.haml",
+    "app/views/admin/tree_templates/edit.html.haml",
+    "app/views/admin/tree_templates/index.html.haml",
+    "app/views/admin/tree_templates/new.html.haml",
+    "config/locales/admin_ui.ru.yml.old",
+    "config/locales/carrierwave.ru.yml.old",
+    "config/locales/default.ru.yml.old",
+    "config/locales/devise.ru.yml",
+    "config/locales/flash.ru.yml.old",
+    "config/locales/formtastic.ru.yml.old",
+    "config/locales/railsbike.en.yml",
+    "config/locales/railsbike.ru.yml",
+    "config/routes.rb",
+    "features/step_definitions/web_steps.rb",
+    "features/support/env.rb",
+    "features/support/paths.rb",
+    "features/support/selectors.rb",
+    "lib/core/liquid_mailer/engine.rb",
+    "lib/core/sitemap/engine.rb",
     "lib/railsbike_ext.rb",
+    "lib/railsbike_ext/engine.rb",
+    "lib/railsbike_ext/engine_ext.rb",
+    "lib/railsbike_ext/export.rb",
+    "lib/railsbike_ext/extended.rb",
+    "lib/railsbike_ext/extended/liquid_mailer_inc.rb",
+    "lib/railsbike_ext/integrator.rb",
+    "lib/railsbike_ext/liquid.rb",
+    "lib/railsbike_ext/liquid/drops/page.rb",
+    "lib/railsbike_ext/liquid/drops/proxy_collection_ext.rb",
+    "lib/railsbike_ext/liquid/drops/site_ext.rb",
+    "lib/railsbike_ext/liquid/tags/cache_tag.rb",
+    "lib/railsbike_ext/liquid/tags/collect_tag.rb",
+    "lib/railsbike_ext/liquid/tags/collect_uniq.rb",
+    "lib/railsbike_ext/liquid/tags/collection.rb",
+    "lib/railsbike_ext/liquid/tags/render_node.rb",
+    "lib/railsbike_ext/liquid/tags/search.rb",
+    "lib/railsbike_ext/liquid/tags/seo_ext.rb",
+    "lib/railsbike_ext/liquid/tags/tree.rb",
+    "lib/railsbike_ext/mongoid_fulltext.rb",
+    "lib/railsbike_ext/mongoid_indexes.rb",
+    "lib/railsbike_ext/railsbike_engine.rb",
+    "lib/railsbike_ext/sphinx_integrator.rb",
+    "lib/tasks/cucumber.rake",
+    "lib/tasks/railsbike.rake",
+    "public/images/admin/form/icons/clone.gif",
+    "public/stylesheets/admin/menu.css",
+    "public/stylesheets/sass/.sass-cache/b2925d110236a82dd8e3e3e153ae826881c66ca4/menu.scssc",
+    "public/stylesheets/sass/.sass-cache/ee3d7fcbbe70db8bfc01ca99872763fbcf7e85c9/menu.scssc",
+    "public/stylesheets/sass/admin/.sass-cache/b2925d110236a82dd8e3e3e153ae826881c66ca4/_helpers.scssc",
+    "public/stylesheets/sass/admin/.sass-cache/b2925d110236a82dd8e3e3e153ae826881c66ca4/menu.scssc",
+    "public/stylesheets/sass/admin/_helpers.scss",
+    "public/stylesheets/sass/admin/menu.scss",
+    "railsbike_ext.gemspec",
     "test/helper.rb",
-    "test/test_railsbike_ext.rb"
+    "test/test_railsbike_ext.rb",
+    "test_app/.gitignore",
+    "test_app/Gemfile",
+    "test_app/Gemfile.lock",
+    "test_app/README",
+    "test_app/Rakefile",
+    "test_app/app/controllers/application_controller.rb",
+    "test_app/app/helpers/application_helper.rb",
+    "test_app/app/views/layouts/application.html.erb",
+    "test_app/config.ru",
+    "test_app/config/application.rb",
+    "test_app/config/boot.rb",
+    "test_app/config/cucumber.yml",
+    "test_app/config/environment.rb",
+    "test_app/config/environments/development.rb",
+    "test_app/config/environments/production.rb",
+    "test_app/config/environments/test.rb",
+    "test_app/config/initializers/backtrace_silencers.rb",
+    "test_app/config/initializers/inflections.rb",
+    "test_app/config/initializers/mime_types.rb",
+    "test_app/config/initializers/secret_token.rb",
+    "test_app/config/initializers/session_store.rb",
+    "test_app/config/locales/en.yml",
+    "test_app/config/mongoid.yml",
+    "test_app/config/routes.rb",
+    "test_app/db/seeds.rb",
+    "test_app/features/15813383.feature",
+    "test_app/features/step_definitions/15813383.rb",
+    "test_app/features/step_definitions/web_steps.rb",
+    "test_app/features/support/env.rb",
+    "test_app/features/support/paths.rb",
+    "test_app/features/support/selectors.rb",
+    "test_app/features/tracker.yml",
+    "test_app/lib/tasks/.gitkeep",
+    "test_app/lib/tasks/cucumber.rake",
+    "test_app/public/404.html",
+    "test_app/public/422.html",
+    "test_app/public/500.html",
+    "test_app/public/favicon.ico",
+    "test_app/public/images/rails.png",
+    "test_app/public/index.html",
+    "test_app/public/javascripts/.gitkeep",
+    "test_app/public/javascripts/application.js",
+    "test_app/public/robots.txt",
+    "test_app/public/stylesheets/.gitkeep",
+    "test_app/script/cucumber",
+    "test_app/script/rails",
+    "test_app/vendor/plugins/.gitkeep"
   ]
-  s.homepage = %q{http://github.com/saratovsource/railsbike_ext}
-  s.licenses = [%q{MIT}]
-  s.require_paths = [%q{lib}]
-  s.rubygems_version = %q{1.8.8}
-  s.summary = %q{Extension for railsbike}
+  s.homepage = "http://github.com/saratovsource/railsbike_ext"
+  s.licenses = ["MIT"]
+  s.require_paths = ["lib"]
+  s.rubygems_version = "1.8.11"
+  s.summary = "Extension for railsbike"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
@@ -42,25 +181,20 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<bson_ext>, ["~> 1.3.0"])
       s.add_runtime_dependency(%q<haml>, ["= 3.1.2"])
       s.add_runtime_dependency(%q<sass>, ["= 3.1.2"])
+      s.add_runtime_dependency(%q<qu-mongo>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
-      s.add_development_dependency(%q<linecache>, ["= 0.43"])
-      s.add_development_dependency(%q<cucumber-rails>, ["= 1.0.2"])
-      s.add_development_dependency(%q<pickler>, [">= 0"])
     else
       s.add_dependency(%q<rails>, ["= 3.0.10"])
       s.add_dependency(%q<mongoid>, ["~> 2.0.2"])
       s.add_dependency(%q<bson_ext>, ["~> 1.3.0"])
       s.add_dependency(%q<haml>, ["= 3.1.2"])
       s.add_dependency(%q<sass>, ["= 3.1.2"])
+      s.add_dependency(%q<qu-mongo>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_dependency(%q<rcov>, [">= 0"])
-      s.add_dependency(%q<linecache>, ["= 0.43"])
-      s.add_dependency(%q<pickler>, [">= 0"])
     end
   else
     s.add_dependency(%q<rails>, ["= 3.0.10"])
@@ -68,12 +202,10 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<bson_ext>, ["~> 1.3.0"])
     s.add_dependency(%q<haml>, ["= 3.1.2"])
     s.add_dependency(%q<sass>, ["= 3.1.2"])
+    s.add_dependency(%q<qu-mongo>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
     s.add_dependency(%q<rcov>, [">= 0"])
-    s.add_dependency(%q<linecache>, ["= 0.43"])
-    s.add_dependency(%q<pickler>, [">= 0"])
   end
 end
 
