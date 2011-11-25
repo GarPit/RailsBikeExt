@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alexander Kirillov"]
-  s.date = "2011-11-24"
+  s.date = "2011-11-25"
   s.description = "Extension for railsbike"
   s.email = "saratovsource@gmail.com"
   s.extra_rdoc_files = [
@@ -67,6 +67,7 @@ Gem::Specification.new do |s|
     "app/views/admin/tree_templates/edit.html.haml",
     "app/views/admin/tree_templates/index.html.haml",
     "app/views/admin/tree_templates/new.html.haml",
+    "config/initializers/qu.rb",
     "config/locales/admin_ui.ru.yml.old",
     "config/locales/carrierwave.ru.yml.old",
     "config/locales/default.ru.yml.old",
@@ -106,6 +107,7 @@ Gem::Specification.new do |s|
     "lib/railsbike_ext/railsbike_engine.rb",
     "lib/railsbike_ext/sphinx_integrator.rb",
     "lib/tasks/cucumber.rake",
+    "lib/tasks/demons.rake",
     "lib/tasks/railsbike.rake",
     "public/images/admin/form/icons/clone.gif",
     "public/stylesheets/admin/menu.css",
@@ -182,6 +184,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<haml>, ["= 3.1.2"])
       s.add_runtime_dependency(%q<sass>, ["= 3.1.2"])
       s.add_runtime_dependency(%q<qu-mongo>, [">= 0"])
+      s.add_runtime_dependency(%q<daemon-spawn>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
@@ -192,6 +195,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<haml>, ["= 3.1.2"])
       s.add_dependency(%q<sass>, ["= 3.1.2"])
       s.add_dependency(%q<qu-mongo>, [">= 0"])
+      s.add_dependency(%q<daemon-spawn>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_dependency(%q<rcov>, [">= 0"])
@@ -203,6 +207,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<haml>, ["= 3.1.2"])
     s.add_dependency(%q<sass>, ["= 3.1.2"])
     s.add_dependency(%q<qu-mongo>, [">= 0"])
+    s.add_dependency(%q<daemon-spawn>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
     s.add_dependency(%q<rcov>, [">= 0"])

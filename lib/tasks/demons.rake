@@ -6,8 +6,15 @@ namespace :railsbike do
 
         desc "Qu server demon #{action}"
         task action.to_sym => [:environment] do
-          #Rake::Task['qu:work'].invoke
-          p "Invokes #{action} actions"
+          RailsbikeExt::QuDaemon.spawn!(
+          {
+            :log_file => '/tmp/qu_server.log',
+            :pid_file => '/tmp/qu_server.pid',
+            :sync_log => true,
+            :working_dir => "/tmp"
+          },
+          [action]
+          )
         end
 
       end

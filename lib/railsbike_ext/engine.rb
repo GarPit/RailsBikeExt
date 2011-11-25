@@ -5,6 +5,8 @@ require 'mongoid'
 require 'haml'
 require 'railsbike_ext/railsbike_engine'
 require 'railsbike_ext/engine_ext'
+require 'railsbike_ext/daemons'
+require 'railsbike_ext/jobs'
 
 
 $:.unshift File.dirname(__FILE__)

@@ -11,6 +11,7 @@ gem 'bson_ext', '~> 1.3.0'
 gem 'haml', '3.1.2'
 gem 'sass', '3.1.2'
 gem 'qu-mongo'
+gem 'daemon-spawn'
 
 group :development do
   gem "shoulda", ">= 0"
