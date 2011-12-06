@@ -1,5 +1,8 @@
 puts ".. loading RailsbikeExt engine"
 
+require 'yaml'
+YAML::ENGINE.yamler = 'syck'
+#--
 require 'rails'
 require 'mongoid'
 require 'haml'
@@ -32,7 +35,11 @@ module RailsbikeExt
     
     config.after_initialize do
       #ContentInstance.send :include, Extensions::Sphinx
-      ::RailsbikeExt::SphinxIntegrator.instance.update_dynamic_search_indexes
+      begin
+        ::RailsbikeExt::SphinxIntegrator.instance.update_dynamic_search_indexes
+      rescue Exception => e
+        
+      end      
       Page.send :include, Extensions::Pagenav
     end
   end

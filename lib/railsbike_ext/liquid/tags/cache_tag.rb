@@ -8,7 +8,6 @@ module RailsbikeExt
         def initialize(tag_name, markup, tokens, context)  
           if markup =~ Syntax
             @fragment_name = $1
-            @fragment_name = Digest::SHA1.hexdigest(@fragment_name)
             @expires_in = ($2 || 0).to_i
             @options = {}
             markup.scan(::Liquid::TagAttributes) do |key, value|
@@ -28,6 +27,10 @@ module RailsbikeExt
         protected
         
         def render_all_and_cache_it(context)
+          # try to search name. If if is not variable, then it is text_value as name
+          @fragment_name = context[@fragment_name] || @fragment_name
+          # and create hash for this
+          @fragment_name = Digest::SHA1.hexdigest(@fragment_name)
           Rails.cache.fetch(@fragment_name, :expires_in => @expires_in, :force => @expires_in == 0) do
             context.stack do
               render_all(@nodelist, context)
