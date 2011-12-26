@@ -157,7 +157,7 @@ pagebreak:{
 desc:"Insert page break."
 },
 locomedia:{
-desc:"Вставить медиа-файл"	
+image_desc:"Вставить медиа-файл"	
 },
 advlist:{
 types:"Types",

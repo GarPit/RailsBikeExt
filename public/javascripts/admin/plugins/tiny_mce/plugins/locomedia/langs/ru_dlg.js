@@ -1,6 +1,6 @@
 tinyMCE.addI18n('ru.locomedia_dlg',{
-  dialog_title: 'Вставить медиа',
-  upload: 'Загрузить медиа',
+  dialog_title: 'Вставить файл',
+  upload: 'Загрузить файл на сервер',
   loading: 'Загрузка...',
   uploading: 'Загрузка файла...',
   destroying: 'Удаление...',
