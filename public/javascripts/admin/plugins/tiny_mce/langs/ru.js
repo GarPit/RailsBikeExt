@@ -156,6 +156,9 @@ no_mpell:"No misspellings found."
 pagebreak:{
 desc:"Insert page break."
 },
+locomedia:{
+desc:"Вставить медиа-файл"	
+},
 advlist:{
 types:"Types",
 def:"Default",
