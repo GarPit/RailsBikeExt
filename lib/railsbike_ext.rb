@@ -1,3 +1,4 @@
+require 'railsbike_ext/file_utilz'
 require 'railsbike_ext/integrator'
 require 'railsbike_ext/engine'
 Dir[File.join(File.dirname(__FILE__), 'core', '**/engine.rb')].each { |lib| require lib }

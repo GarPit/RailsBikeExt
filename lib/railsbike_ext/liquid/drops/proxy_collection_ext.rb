@@ -19,6 +19,10 @@ module RailsbikeExt
             self.collection.select(&block)
           end
           
+          def collection_name
+            @content_type.name
+          end
+          
           def group_by_field!(fieldname)
             oldcol = self.collection.group_by{|item| item.send(fieldname)}
             res_array = []
