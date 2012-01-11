@@ -10,6 +10,7 @@ gem 'mongoid', '~> 2.0.2'
 gem 'bson_ext', '~> 1.3.0'
 gem 'haml', '3.1.2'
 gem 'sass', '3.1.2'
+gem 'RedCloth'
 
 group :development do
   gem "shoulda", ">= 0"
