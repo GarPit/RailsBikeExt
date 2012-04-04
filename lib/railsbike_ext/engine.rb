@@ -6,6 +6,7 @@ YAML::ENGINE.yamler = 'syck'
 require 'rails'
 require 'mongoid'
 require 'haml'
+require 'liquid'
 require 'railsbike_ext/railsbike_engine'
 require 'railsbike_ext/engine_ext'
 
